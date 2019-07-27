@@ -1,5 +1,8 @@
 package com.atalyan.springTest;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RockMusic implements Music {
 
     @Override

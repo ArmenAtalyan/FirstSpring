@@ -10,17 +10,6 @@ public class Player {
     private String name;
     private int volume;
 
-    private List<Music> musicList = new ArrayList<>();
-
-    public List<Music> getMusicList() {
-        return musicList;
-    }
-
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-        musicList.add(music);
-    }
-
     public String getName() {
         return name;
     }
@@ -48,9 +37,7 @@ public class Player {
         this.music = music;
     }
 
-    public void playAllMusic(){
-        for(Music m : musicList) {
-            System.out.println(m);
-        }
+    public void playMusic(){
+            System.out.println("playing " + music.getSong());
     }
 }
