@@ -6,9 +6,10 @@ import java.util.List;
 
 public class Player {
 
-    private Music music;
+    List<Music> musicList = new ArrayList<>();
     private String name;
     private int volume;
+
 
     public String getName() {
         return name;
@@ -29,15 +30,18 @@ public class Player {
     Player(){}
 
     //Ioc
-    public Player(Music music){
-        this.music = music;
-    }
 
-    public void setMusic(Music music){
-        this.music = music;
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public void playMusic(){
-            System.out.println("playing " + music.getSong());
+            for(Music track : musicList){
+                try {
+                    System.out.println(track.getSong());
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e){}
+            }
     }
 }

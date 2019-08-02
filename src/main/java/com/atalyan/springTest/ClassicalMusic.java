@@ -10,11 +10,20 @@ public class ClassicalMusic implements Music {
     public String getSong() {
         return "Moon light";
     }
-    public void doInit(){
-        System.out.println("Do my initialization.");
+    public void doMyInit(){
+        try {
+             System.out.println("Initialization Classical bean.");
+             Thread.sleep(1000);
+        }
+        catch (InterruptedException e){}
     }
-    public void doDestroy(){
-        System.out.println("Do my destruction.");
+
+    public void doMyDestroy(){
+        try {
+            System.out.println("Destroy Classical bean.");
+            Thread.sleep(1000);
+        }
+        catch (InterruptedException e){}
     }
     public static ClassicalMusic getClassicalMusic(){
         return new ClassicalMusic();

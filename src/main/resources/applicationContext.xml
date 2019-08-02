@@ -8,6 +8,32 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-   <context:component-scan base-package="com.atalyan.springTest"/>
+   <bean id = "musicBean1" class="com.atalyan.springTest.ClassicalMusic"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy">
+   </bean>
+   <bean id = "musicBean2" class="com.atalyan.springTest.JazzMusic"
+         init-method="doMyInit"
+         destroy-method="doMyDestroy">
+   </bean>
+   <bean id = "musicBean3" class="com.atalyan.springTest.RockMusic"
+         init-method="doMyInit"
+         destroy-method="doMyDestroy">
+   </bean>
+   <bean id = "musicBean4" class="com.atalyan.springTest.PopMusic"
+         init-method="doMyInit"
+         destroy-method="doMyDestroy">
+   </bean>
+
+   <bean id = "player" class="com.atalyan.springTest.Player">
+      <property name="musicList">
+         <list>
+            <ref bean="musicBean1"/>
+            <ref bean="musicBean2"/>
+            <ref bean="musicBean3"/>
+            <ref bean="musicBean4"/>
+         </list>
+      </property>
+   </bean>
 
 </beans>
